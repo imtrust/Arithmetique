@@ -1,0 +1,47 @@
+def parcours_prefixe(arbre):
+    if arbre is not None:
+        print(arbre.valeur)
+        parcours_prefixe(arbre.gauche)
+        parcours_prefixe(arbre.droit)
+    return parcours
+print(parcours_prefixe(abr))
+
+
+def parcours_infixe(arbre) :
+    if arbre is not None :
+        parcours_prefixe(arbre.gauche)
+        print(arbre.valeur)
+        parcours_prefixe(arbre.droit)
+    return parcours
+print(parcours_infixe(abr))
+
+
+def parcours_postfixe(arbre) :
+    if arbre is not None:
+        parcours_prefixe(arbre.gauche)
+        parcours_prefixe(arbre.droit)
+        print(arbre.valeur)
+    return parcours
+print(parcours_postfixe(abr))
+
+def tri(arbre):
+    ordered_list = []
+    parcours_infixe(arbre,ordered_list)
+    return ordered_list
+print(tri(abr))
+    
+    
+ def maximum(arbre):
+    if arbre is not None:
+        if arbre.droit is None:
+            return arbre.valeur
+        return maximum(arbre.droit)
+print(maximum(abr))
+
+
+def minimum(arbre):
+    if arbre:
+        if arbre.gauche is None:
+            return arbre.valeur
+        return minimum(arbre.gauche)
+print(minimum(abr))
