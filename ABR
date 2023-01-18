@@ -45,3 +45,14 @@ def minimum(arbre):
             return arbre.valeur
         return minimum(arbre.gauche)
 print(minimum(abr))
+
+
+def recherche(arbre,valeur):
+    if arbre.valeur == valeur or (arbre.gauche and recherche(arbre.gauche,valeur)) or (arbre.droit and recherche(arbre.droit,valeur)):
+        return True
+    else:
+        return False
+    
+    
+print(recherche(abr4,'tortue'))
+print(recherche(abr4,'crapaud'))
