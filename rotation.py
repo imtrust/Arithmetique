@@ -52,18 +52,31 @@ class Main :
             pixels (méthodes get_at et set_at)."""
             
         l = []
-        for i in range(512):
-            pixel = self.window.get_at((i, 200)) # récupère la valeur d'un pixel
-            l.append(pixel)
+        rota=[]
+        
+        for z in range(512):
+            test=[]
+            for i in range(512):
+                pixel = self.window.get_at((i, z)) # récupère la valeur d'un pixel
+                test.append(pixel)
+                
             
-        
-            for j in range(0, 0):
-                self.window.set_at((i, j), pixel) # définit la valeur d'un pixel
-        
+                for j in range(0, 0):
+                    self.window.set_at((i, j), pixel) # définit la valeur d'un pixel
+            l.append(test)
             # mise à jour de l'affichage   
             pygame.display.update()
         print(l)
-
+        for z in range(512):
+            test=[]
+            for i in range(512):
+                test.append(l[i][z])
+            rota.append(test)
+        print(rota)        
+        print(len(rota))
+        print(len(l))
+    
+        
     
 Main()
 
