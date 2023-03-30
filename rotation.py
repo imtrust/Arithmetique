@@ -35,13 +35,14 @@ class Main :
             for event in events_list :
                 if event.type == QUIT :
                     lock = False
-                if event.type == KEYDOWN :
+                if event.type == KEYDOWN : 
                     if event.key == K_ESCAPE :
                         lock = False
         pygame.quit()
         
 
     def rotation(self):
+        
         """ rotation()->None 
             Tourne l'image d'un quart de tour."""
             
@@ -50,14 +51,20 @@ class Main :
             d'exemple de manipulation des valeurs des
             pixels (méthodes get_at et set_at)."""
             
-
+        l = []
         for i in range(512):
             pixel = self.window.get_at((i, 200)) # récupère la valeur d'un pixel
-            for j in range(200, 300):
+            l.append(pixel)
+            
+        
+            for j in range(0, 0):
                 self.window.set_at((i, j), pixel) # définit la valeur d'un pixel
-
+        
             # mise à jour de l'affichage   
             pygame.display.update()
+        print(l)
 
     
 Main()
+
+
